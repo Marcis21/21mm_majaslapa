@@ -1,0 +1,660 @@
+/* Basic Reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); /* 12 vienāda platuma kolonnas */
+    gap: 20px; /* Starpkolonnu atstarpes */
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #1c1c1c;
+    color: whitesmoke;
+    min-height: 100vh;  
+}
+
+main {
+    grid-column: 2 / span 10;
+    gap: 20px;
+    max-width: 100vh;
+    margin: 0 auto;
+}
+
+a:hover, li a:hover, .image-container .aicinajums a:hover {
+    text-decoration: none;
+    color: aqua;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+/* Main Content Styles */
+
+
+
+h1 {
+    align-self: end; /* Novieto tuvāk tekstam */
+    margin-top: 10px; /* Mazākas atstarpes starp h1 un p */
+    border: 1px dashed whitesmoke;
+    margin: 0rem;
+    padding: 1rem;
+    width: 300px;
+    font-size: 1.5rem;
+}
+
+h2{
+    border: 1px dashed whitesmoke;
+    margin: 0rem;
+    padding: 1rem;
+    width: 300px; 
+    font-size: 1.5rem;
+    text-transform: lowercase;
+    align-self: center;
+    text-align: center;
+}
+
+h2:hover{
+    color: aqua;
+}
+p{
+    text-transform:none; /* This applies to all paragraphs */
+    font-size: 1rem;
+    line-height: 2rem;
+    margin-top: 0;
+}
+
+
+
+/* Header Styles */
+
+header  {
+    grid-column: 1 / span 12; /* Header aizņem visas 12 kolonnas */
+    margin: 0rem 2rem;
+    border:1px solid rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav {
+    position: relative;
+    z-index: 10;
+    background-color: #1c1c1c;
+    border:1px solid rgb(255, 255, 255);
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-media {
+    display: flex;
+    gap: 15px;
+}
+
+.social-media a {
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+    padding: 20px;
+    text-align: right;
+}
+
+
+/* Navigation Styles */
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    position: relative;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    padding: 22px;
+    display: block;
+}
+
+
+/* Submenu Styles */
+nav ul ul {
+    display: none; /* Hide submenu by default */
+    position: absolute;
+    top: 100%; /* Position below the parent menu item */
+    left: 0;
+    z-index: 20; /* Ensure it appears above other elements */
+}
+
+nav ul li:hover > ul {
+    display: block;
+}
+
+nav ul ul li {
+    margin: 0; /* No margin for submenu items */
+    width: 200px;
+}
+nav ul ul li a {
+    padding: 20px;
+    display: block;
+}
+
+
+.image-container {
+    grid-column: 2 / span 10; /* Match main's column span */
+    text-align: center;
+}
+
+.image-container img.Background {
+    display: block; /* Tas ir labi */
+    width: 100%; /* Tas ir labi */
+    height: 100vh; /* Nodrošina, ka attēls aizpilda visu augstumu */
+    object-fit: cover; /* Pareizā lietošana attēliem */
+    margin: 0 auto; /* Centra attēlu horizontāli */
+}
+
+.image-container .aicinajums {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.1); /* Optional for background overlay */
+    padding: 20px;
+}
+
+
+.image-container .aicinajums a {
+    font-size: 1rem;
+}
+
+
+.zimols {
+    position: absolute;
+    top: 40%; /* Position the logo slightly above the center */
+    left: 50%; /* Center it horizontally */
+    transform: translate(-50%, -50%); /* Ensure it is perfectly centered */
+    width: 300px; /* Adjust size of the logo */
+}
+
+/*Par Studija 21mm*/
+
+.par-studija-21mm {
+    border: 1px dashed whitesmoke;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+    row-gap: 10px; /* Mazākas atstarpes starp rindām */
+    gap: 20px;
+    box-sizing: border-box;
+    max-width:100%; /* Maximum width of the container */
+    min-height: 100vh; /* Minimum height */
+    grid-column: 2 / span 10; /* Centrs 10 kolonnās */
+}
+
+.left-side, .right-side {
+    display: flex;
+    flex-direction: column; /* Elastīgs izkārtojums ar flex */
+    justify-content: flex-start;
+    width: 100%;
+    height: auto; 
+  
+}
+
+  .left-side {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 kolonna, kas aizņem visu pieejamo vietu */
+    grid-template-rows:max-content; /* Automātiski pēc satura augstuma */
+  }
+
+  .right-side {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 kolonna, kas aizņem visu pieejamo vietu */
+    grid-template-rows:max-content; /* Automātiski pēc satura augstuma */
+  }
+
+  .teksts1, .teksts2 {
+    border: 1px dashed whitesmoke;
+    margin: 0rem;
+    padding: 1rem;
+    line-height: 2rem;
+}
+
+.dala1 {
+    display: grid;
+    grid-row: 1; /* Pārvieto uz pirmo rindu grid */
+    grid-column: 1; /* Pārliecinies, ka tas ir pirmajā kolonnā */
+    align-self: start; /* Novieto augšpusē */
+    box-sizing: border-box;
+}
+
+.teksts1 {
+    grid-row: 2; /* Pārvieto uz otro rindu zem h1 */
+    grid-column: 1; /* Arī pirmajā kolonnā */
+    align-self: start; /* Novieto augšpusē */
+
+}
+
+.dala2 {
+    grid-row: 3; /* Pārvieto uz trešo rindu */
+}
+
+.teksts2 {
+    grid-row: 4; /* Pārvieto uz ceturto rindu zem otrā h1 */
+}
+
+.normal {
+    text-transform: none; /* Override to keep this paragraph normal */
+    text-align: center; /* Keep text centered if desired */
+}
+
+.image2-container {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.image2 {
+    width: 100%; /* Attēls aizņems visu platumu, bet saglabās proporcijas */
+    height: auto;
+}
+
+.logo-kapseta {
+    display: grid;
+    max-width: 100%; /* Attēls aizņems visu platumu, bet saglabās proporcijas */
+    margin: 0 auto; /* Centrē visu gridu konteinerā */
+    max-height: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Elastīgs kolonnu skaits */
+    gap: 40px;
+    row-gap: 40px;
+    object-fit: cover;
+    justify-content: center; /* Horizontāli centrē grid šūnas */
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+    max-width: 100px;
+    object-fit: contain; /* Saglabā proporcijas */
+} 
+
+
+/*Container - video-pakalpojumi*/
+.video-container{
+    display: flex; /* Use flexbox for layout */
+    max-width:100%; /* Maximum width of the container */
+    min-height: 100vh; /* Minimum height */
+    margin-inline: auto;
+    border:1px solid rgb(255, 255, 255);
+    align-items:center;
+    flex-wrap:wrap; /* Allow items to wrap */
+    align-content: space-evenly;
+}
+
+.video-container .block{
+    display: flex;
+    height: 50vh; /* Full height of the viewport */
+    background-color: rgb(0, 0, 0); /* Block background color */
+    color: whitesmoke; /* Text color */
+    font-size: 1.5rem; /* Font size */
+    padding: 1rem; /* Padding */
+    margin: 0.5rem; /* Margin around blocks */
+    justify-content: center; /* Center content horizontally */
+    flex: 1 1 350px; /* Allow blocks to grow/shrink with a minimum base size */
+}
+
+/*kontakti*/
+
+
+.contact-container {
+    border: 1px dashed whitesmoke;
+    max-width: 100%; /* Ensure container fills the full width of the page */
+    max-width: 1200px; /* Optional max-width to limit overall container size */
+    margin: 0 auto; /* Center the container */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+    grid-template-rows: auto auto;
+    row-gap: 10px;
+    gap: 20px;
+    box-sizing: border-box;
+    min-height: 100vh; /* Ensure full height */
+    padding: 20px; /* Optional padding for internal spacing */
+}
+
+.left-section, .right-section {
+    display: flex;
+    flex-direction: column; /* Elastīgs izkārtojums ar flex */
+    align-content: center;
+    height: auto;    
+}
+
+.left-section {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 kolonna, kas aizņem visu pieejamo vietu */
+    grid-template-rows:max-content; /* Automātiski pēc satura augstuma */
+    margin-top: 0; /* Noņem jebkādu augšējo margin */
+}
+
+.right-section {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 kolonna, kas aizņem visu pieejamo vietu */
+    grid-template-rows:max-content; /* Automātiski pēc satura augstuma */
+    margin-top: 0; /* Noņem jebkādu augšējo margin */
+}
+
+.left-section a {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.bilde {
+    width: 100%; /* Image width will be responsive */
+    height: auto; /* Maintain image aspect ratio */
+    max-width: 500px; /* Limit maximum image width */
+}
+.teksts3{
+    border: 1px dashed whitesmoke;
+    text-transform:none; /* This applies to all paragraphs */
+    font-size: 1rem;
+    line-height: 2rem;
+    margin-top: 0;
+    padding: 1rem;
+    align-self: start;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Spacing between rows */
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 20px;
+}
+
+label {
+    font-size: 14px;
+    color: whitesmoke;
+    display: block;
+    font-style: italic;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    
+}
+.input-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Make input groups grow equally */
+}
+
+input, textarea {
+    padding: 10px;
+    background-color: #00000000;
+    border: 2px solid #555;
+    color:whitesmoke;
+    transition: border-color 0.3s ease;  /* Smooth transition for hover effect */
+    width: 100%;
+    box-sizing: border-box; /* Make sure padding and border are included in width */
+}
+
+input:hover, textarea:hover {
+    border-color: aqua; 
+    transition: box-shadow 1s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: aqua;  /* Aqua border when focused */
+    outline: none;       /* Remove the default blue outline */
+}
+
+textarea {
+    width: 100%;
+    resize: vertical;
+}
+
+.full-width {
+    flex-direction: column;
+}
+
+button {
+    align-self: flex-start; /* Align the button to the left */
+    padding: 10px 20px;
+    background-color: #555;
+    color: whitesmoke;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: aqua;
+    transition: box-shadow 1s ease;
+}
+
+
+
+/* Footer Styles */
+hr {
+    margin: 20px 0;
+}
+
+footer {
+    grid-column: span 12; /* Footer arī aizņem visas 12 kolonnas */
+    position: sticky;
+    bottom: 0;
+    background-color: #1c1c1c;
+    padding: 1rem 0;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+
+    * {
+        box-sizing: border-box; /* Nodrošina, ka padding un border ir daļa no platuma */
+    }
+
+    main {
+        grid-column: 1 / span 12; /* Full width on mobile */
+        margin: 0 auto; /* Centrē visu saturu */
+        box-sizing: border-box;
+    }
+
+    body {
+        padding: 10px; /* Less padding on mobile */
+    }
+    .col-8 {
+        grid-column: 1 / span 12;
+    }
+    header {
+        margin: 0;
+        display: flex;
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center;
+        justify-content: center;
+    }
+
+    header nav {
+        display: flex;
+        flex-direction: column; /* Stack menu vertically */
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 10px; /* Add some margin to ensure menu is below the social icons */
+    }
+
+    .zimols {
+        width: 30vw; /* Adjust intro text size */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack menu items vertically */
+        align-items: center;
+        list-style: none; /* Remove bullet points */
+        padding: 0;
+    }
+
+    nav ul ul {
+    display: none;
+    }
+    nav ul li:hover > ul {
+    color: aqua;
+    display: none;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .social-media {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center social icons */
+    margin-bottom: 10px; /* Add spacing between social icons and menu bar */
+    }
+
+    .social-media a {
+    margin: 0 10px; /* Space out the icons horizontally */
+    }
+
+    .par-studija-21mm{
+        flex-direction: column;
+        grid-template-columns: 1fr; /* Viena kolonna - visi elementi viens zem otra */
+        grid-template-areas:
+            "text1"
+            "text2"
+            "image"
+            "logo"; /* Definē secību */
+    }
+
+    .left-side, .right-side {
+        width: 100%;
+      }
+
+    .logo-kapseta{
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap; /* Allow logos to wrap on smaller screens */
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-container {
+        min-height: auto;
+        grid-template-columns: 1fr; /* Pāriet uz vienu kolonnu */
+        grid-template-rows: auto auto; /* Pielāgo augstumu atbilstoši saturam */ 
+    }
+
+    .left-section, .right-section {
+        width: 100%; /* Aizpilda visu platumu katrai sekcijai */
+        justify-content: center; /* Centē saturu, ja nepieciešams */
+        margin: 0;
+    }
+
+    .right-section{
+        margin: 0;
+        padding: 20px;
+    }
+    .left-section{
+        width: 100%; /* Nodrošina, ka elementi aizpilda vecāka konteinera platumu */
+        max-width: 100%; /* Nepārsniedz 100% no vecāka elementa */
+    }
+
+    .bilde {
+        width: 320px; /* Attēls aizpilda pieejamo vietu horizontāli */
+    }
+
+    .teksts3{
+    width: 100%;
+    margin: 0;
+    }
+
+    form {
+        width: 100%; /* Nodrošina, ka forma aizņem visu platumu */
+    }
+}
+    
+
+@media (max-width: 480px) {
+
+    header {
+        margin: 0;
+    }   
+
+    main {
+    margin:0px;
+    }
+
+    h1 {
+        margin: 0px;
+    }
+
+header nav {
+        flex-direction: column; /* Stack header elements vertically */
+        align-items: center; /* Align elements to the left */
+        flex-wrap: wrap;
+        
+    }
+
+nav ul ul {
+        display: none; /* Consider implementing a mobile menu instead */
+    }
+
+    .video-container{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .video-container .block{
+        flex: 1 1 auto;  
+    }
+
+    .zimols {
+        width: 30vw; /* Make the logo smaller on mobile screens */
+    }
+
+    .centered-text {
+        font-size: 6vw; /* Adjust text size on mobile screens */
+    }
+
+    .intro {
+        font-size: 4vw; /* Adjust intro text size */
+    }
+    
+    .teksts, h1 {
+        width: auto;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr; /* Pāriet uz vienu kolonnu */
+        grid-template-rows: auto auto; /* Pielāgo augstumu atbilstoši saturam */
+    }
+
+    .left-section, .right-section {
+        width: 100%; /* Aizpilda visu platumu katrai sekcijai */
+
+    }
+    
+    .right-section{
+        margin: 0;
+        padding: 20px;
+    }
+    .left-section{
+        width: 100%; /* Nodrošina, ka elementi aizpilda vecāka konteinera platumu */
+
+    }
+
+    .teksts3{
+    width: 100%;
+    margin: 0;
+    }
+
+    form {
+        width: 100%; /* Nodrošina, ka forma aizņem visu platumu */
+    }
+}
